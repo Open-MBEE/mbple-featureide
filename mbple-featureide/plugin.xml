@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <!-- Extension for handling feature model import -->
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            commandId="com.example.featureide.importer.importFeatures"
+            class="com.example.featureide.importer.ImportFeaturesHandler">
+        </handler>
+    </extension>
+
+    <!-- Extension for keyboard shortcuts -->
+    <extension point="org.eclipse.ui.bindings">
+        <key
+            commandId="com.example.featureide.importer.importFeatures"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+ALT+I">
+        </key>
+    </extension>
+
+    <!-- Extension for adding import features command -->
+    <extension
+        point="org.eclipse.ui.commands">
+        <command
+            id="com.example.featureide.importer.importFeatures"
+            name="Import Features"
+            description="Imports features into the feature model.">
+        </command>
+    </extension>
+
+    <!-- Extension for menu integration -->
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+            <menu
+                id="com.example.featureide.importer.menu"
+                label="Feature Importer">
+                <command
+                    commandId="com.example.featureide.importer.importFeatures"
+                    label="Import Features">
+                </command>
+            </menu>
+        </menuContribution>
+    </extension>
+
+</plugin>

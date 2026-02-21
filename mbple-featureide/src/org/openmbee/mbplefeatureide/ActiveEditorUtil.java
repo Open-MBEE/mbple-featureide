@@ -1,4 +1,4 @@
-package com.example.featureide.importer;
+package org.openmbee.mbplefeatureide;
 
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;

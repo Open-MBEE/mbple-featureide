@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
 
@@ -6,18 +6,28 @@
     <extension
         point="org.eclipse.ui.handlers">
         <handler
-            commandId="com.example.featureide.importer.importFeatures"
-            class="com.example.featureide.importer.ImportFeaturesHandler">
+            commandId="org.openmbee.mbplefeatureide.importFeatures"
+            class="org.openmbee.mbplefeatureide.ImportFeaturesHandler">
+        </handler>
+        <handler
+            commandId="org.openmbee.mbplefeatureide.configureSysmlServer"
+            class="org.openmbee.mbplefeatureide.ConfigureSysmlServerHandler">
         </handler>
     </extension>
 
     <!-- Extension for keyboard shortcuts -->
     <extension point="org.eclipse.ui.bindings">
         <key
-            commandId="com.example.featureide.importer.importFeatures"
+            commandId="org.openmbee.mbplefeatureide.importFeatures"
             contextId="org.eclipse.ui.contexts.window"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
             sequence="CTRL+ALT+I">
+        </key>
+        <key
+            commandId="org.openmbee.mbplefeatureide.configureSysmlServer"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+ALT+C">
         </key>
     </extension>
 
@@ -25,9 +35,14 @@
     <extension
         point="org.eclipse.ui.commands">
         <command
-            id="com.example.featureide.importer.importFeatures"
+            id="org.openmbee.mbplefeatureide.importFeatures"
             name="Import Features"
             description="Imports features into the feature model.">
+        </command>
+        <command
+            id="org.openmbee.mbplefeatureide.configureSysmlServer"
+            name="Configure SysML v2 Repository"
+            description="Opens a dialog to configure the SysML v2 repository server connection.">
         </command>
     </extension>
 
@@ -37,11 +52,19 @@
             allPopups="false"
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
             <menu
-                id="com.example.featureide.importer.menu"
+                id="org.openmbee.mbplefeatureide.menu"
                 label="Feature Importer">
                 <command
-                    commandId="com.example.featureide.importer.importFeatures"
+                    commandId="org.openmbee.mbplefeatureide.importFeatures"
                     label="Import Features">
+                </command>
+                <separator
+                    name="org.openmbee.mbplefeatureide.separator1"
+                    visible="true">
+                </separator>
+                <command
+                    commandId="org.openmbee.mbplefeatureide.configureSysmlServer"
+                    label="Configure SysML v2 Repository">
                 </command>
             </menu>
         </menuContribution>

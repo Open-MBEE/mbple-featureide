@@ -1,4 +1,4 @@
-package com.example.featureide.importer;
+package org.openmbee.mbplefeatureide;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

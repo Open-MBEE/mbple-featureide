@@ -1,4 +1,4 @@
-package com.example.featureide.importer;
+package org.openmbee.mbplefeatureide;
 
 import de.ovgu.featureide.fm.core.base.IFeature;
 import de.ovgu.featureide.fm.core.base.IFeatureStructure;

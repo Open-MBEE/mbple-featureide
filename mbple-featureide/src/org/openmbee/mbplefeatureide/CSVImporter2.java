@@ -1,4 +1,4 @@
-package com.example.featureide.importer;
+package org.openmbee.mbplefeatureide;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

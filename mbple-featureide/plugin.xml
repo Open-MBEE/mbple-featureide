@@ -70,4 +70,10 @@
         </menuContribution>
     </extension>
 
+
+    <!-- Register MbpleStartup so Eclipse calls earlyStartup() at workbench launch -->
+    <extension point="org.eclipse.ui.startup">
+        <startup class="org.openmbee.mbplefeatureide.MbpleStartup"/>
+    </extension>
+
 </plugin>
